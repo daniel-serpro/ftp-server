@@ -1,0 +1,10 @@
+---
+    - name: Define o arquivo de configuracao do servidor vsFTPd
+      template:
+        src: vsftpd.conf.j2
+        dest: /etc/vsftpd.conf
+        owner: root
+        group: root
+        mode: 0644
+      notify:
+          - Restart FTP

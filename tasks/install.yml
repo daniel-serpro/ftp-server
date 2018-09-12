@@ -1,0 +1,20 @@
+---
+    - name: Instalar FTP no Debian/Ubuntu
+      apt:
+        name: vsftpd
+        state: present
+        update_cache: true
+      when: ansible_os_family == "Debian" 
+      register: ftp_installed
+      notify:
+        - Start FTP
+
+    - name: Instalar FTP no CentOS/RedHat
+      yum:
+        name: vsftpd
+        state: present
+      when: ansible_os_family == "RedHat" 
+      register: ftp_installed
+      notify:
+        - Start FTP
+

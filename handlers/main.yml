@@ -1,0 +1,7 @@
+---
+    - name: Start FTP
+      service: name=vsftpd state=started
+    
+    - name: Restart FTP
+      service: name=vsftpd state=restarted
+

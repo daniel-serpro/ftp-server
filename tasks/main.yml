@@ -1,0 +1,6 @@
+---
+- name: Define instalacao do servidor vsFTPd
+  import_tasks: install.yml
+
+- name: Define configuracao do servidor vsFTPd
+  import_tasks: configure.yml
